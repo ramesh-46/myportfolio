@@ -1,0 +1,58 @@
+RAMESH KUMAAR SURA
+Full Stack Developer
+Hyderabad, Telangana, 500016
+Phone: +91 9550354436
+Email: suraramesh46@gmail.com
+LinkedIn: https://www.linkedin.com/in/rameshh-kumaar-sura-25b3111a8/
+GitHub: https://github.com/ramesh-46
+
+-----------------------------------------
+EDUCATION
+-----------------------------------------
+- Nxtwave Disruptive Technologies
+  Industry Ready Certification in Full-stack Development (Nov 2022 - Ongoing)
+
+- Sri Chaitanya PG College, Karimnagar
+  PG in Computer Science (2022 - 2024) | CGPA: 7.4
+
+- Vivekananda Degree & PG College, Karimnagar
+  BSc in Mathematics, Physics, Computers (2019 - 2022) | CGPA: 7.8
+
+- Trinity Junior College, Karimnagar
+  Intermediate MPC (2017 - 2019) | Percentage: 75.8%
+
+- Vivekananda High School, Karimnagar
+  Secondary School Certificate (2016 - 2017) | CGPA: 8.7
+
+-----------------------------------------
+SKILLS
+-----------------------------------------
+Frontend: HTML, CSS, Bootstrap, JavaScript, React.js
+Backend: Python, Express, Node.js
+Databases: SQLite
+Other skills: AngularJS, C, C++, MongoDB, OOP, Git
+
+-----------------------------------------
+PROJECTS
+-----------------------------------------
+- Wikipedia Search Application
+  Developed a custom Wikipedia search app where users can view curated results.
+  Technologies used: HTML, CSS, JS, Bootstrap, REST API
+
+- Todos Application
+  A task management app with seamless CRUD operations and task persistence.
+  Technologies used: HTML, CSS, JS, Bootstrap
+
+- Task Manager (Trello Clone)
+  Implemented a responsive task manager with React.js and Trello API integration.
+  Technologies used: React.js, Bootstrap, Trello API
+
+-----------------------------------------
+CERTIFICATES
+-----------------------------------------
+- AI Data Scientist Certificate
+
+-----------------------------------------
+ACHIEVEMENTS
+-----------------------------------------
+- Best Learner in 2022 (Task Batch)

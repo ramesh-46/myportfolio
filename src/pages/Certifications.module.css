@@ -1,0 +1,298 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    animation: fadeInDown 0.5s ease;
+  }
+  
+  .certGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+  
+  .card {
+    position: relative;
+    width: 190px;
+    height: 254px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #000000;
+  }
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: -5px;
+    margin: auto;
+    width: 200px;
+    height: 264px;
+    border-radius: 15px;
+    background: linear-gradient(-45deg, #1cc2ff 0%, #ff261b 100%);
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #1cffa4 0%, #ff01aee6 100%);
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(40px);
+  }
+  
+  .heading {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  
+  .card p:not(.heading) {
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  .card p:last-child {
+    color: #ffffff;
+  }
+  
+  .card:hover::after {
+    filter: blur(50px);
+  }
+  
+  .card:hover::before {
+    transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+  }
+  
+  .card:hover {
+    transform: scale(1);
+  }
+  
+  .certDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .certImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .certImage:hover {
+    transform: scale(1.05);
+  }
+  
+  .certInfo {
+    text-align: center;
+  }
+  
+  .certInfo h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+  
+  .certInfo p {
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .backButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .backButton:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive design */
+  @media (min-width: 768px) {
+    .certDetail {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  
+    .certImage {
+      max-width: 50%;
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+  
+    .certInfo {
+      text-align: left;
+      flex: 1;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    .certGrid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+  
+    .card {
+      width: 250px;
+      height: 300px;
+    }
+  
+    .card::before {
+      width: 260px;
+      height: 310px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .certGrid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .card {
+      width: 150px;
+      height: 200px;
+    }
+    
+    .card::before {
+      width: 160px;
+      height: 210px;
+    }
+    
+    .heading {
+      font-size: 16px;
+    }
+    
+    .card p:not(.heading) {
+      font-size: 14px;
+    }
+  }.container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .certGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    gap: 20px; /* Space between cards */
+  }
+  
+  .card {
+    background: #f9f9f9; /* Card background color */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Inner spacing */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animation effects */
+    cursor: pointer; /* Pointer cursor on hover */
+    height: 250px; /* Set a fixed height for cards */
+    display: flex; /* Flex display for better alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space out items */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  }
+  
+  .certDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Space above details */
+  }
+  
+  .certImage {
+    width: 100%; /* Responsive image */
+    max-width: 400px; /* Max width for image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for the image */
+  }
+  
+  .certInfo {
+    margin-top: 15px; /* Space between image and info */
+  }
+  
+  .heading {
+    font-weight: bold; /* Make the title bold */
+  }
+  
+  .backButton {
+    margin-top: 15px; /* Space above the button */
+    padding: 10px 20px; /* Button padding */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Transition for hover effect */
+  }
+  
+  .backButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  

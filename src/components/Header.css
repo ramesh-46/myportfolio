@@ -1,0 +1,720 @@
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.header-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw; /* Use viewport width to ensure it fills the screen */
+  height: 400px; /* Increased height of the header */
+  padding: 20px; /* Space around the header */
+  margin: 0; /* Remove margin to fit the screen */
+  background-color: rgba(0, 0, 0, 0.8); /* Decreased black color opacity */
+  border-radius: 8px;
+  overflow: hidden; /* To avoid overflow of pseudo-elements */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.header-container:hover {
+  background-color: rgba(0, 0, 0, 0.6); /* Change background on hover */
+}
+
+.header-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 100%; /* Adjust for your layout */
+  height: 100%; /* Adjust for your layout */
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header-container::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.header-container:hover::after {
+  filter: blur(30px);
+}
+
+.header-container:hover::before {
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+
+.left-container {
+  flex: 0 0 70%; /* Set width to 70% */
+  color: #fff; /* Text color */
+  z-index: 1; /* Bring content in front of the pseudo-elements */
+  text-align: left; /* Align text to the left */
+  padding-left: 20px; /* Adjusted padding for consistency */
+}
+
+.right-container {
+  flex: 0 0 30%; /* Set width to 30% */
+  display: flex; /* Use flex to center image */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+h1 {
+  font-size: 56px; /* Increased font size */
+  text-align: center; /* Center the text */
+  margin: 20px 0; /* Add space above and below the heading */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+h2 {
+  font-size: 40px; /* Increased font size */
+  text-align: center; /* Center the text */
+  margin: 10px 0; /* Add space above and below the subheading */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.left-container:hover h1,
+.left-container:hover h2 {
+  color: #fdfdfd; /* Change color on hover */
+}
+
+.social-links {
+  display: flex; /* Use flex to align icons */
+  justify-content: center; /* Center icons */
+  gap: 20px; /* Space between icons */
+  margin: 10px 0; /* Margin above and below the icons */
+}
+
+.social-links a {
+  color: #fffed9; /* Color for social icons */
+  font-size: 20px; /* Increased icon size */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+  padding-left: 15px; /* Added padding for left alignment */
+}
+
+.social-links a:hover {
+  color: #3eb8d0; /* Change color on hover */
+}
+
+.contact-info {
+  text-align: center; /* Center align contact info */
+  margin: 20px 0; /* Margin above and below the contact info */
+}
+
+.contact-info span {
+  display: block; /* Display each piece of contact info on a new line */
+  color: #fff; /* Color for contact info */
+  font-size: 19px; /* Adjust font size for contact info */
+}
+.profile-image {
+  width: 100%; /* Use 100% width for responsiveness */
+  max-width: 300px; /* Maximum width for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the container */
+  border: 5px solid #3498db; /* Add a border with color */
+  border-radius: 15px; /* Slightly rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for animations */
+}
+
+/* Hover effect to scale the image and add a shadow */
+.profile-image:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 600px) {
+  .profile-image {
+    max-width: 200px; /* Smaller max width for mobile screens */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .profile-image {
+    max-width: 250px; /* Medium max width for tablets */
+  }
+}
+
+
+/* Button Styles */
+.container {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center; /* Center align button */
+  margin-top: 20px; /* Add space above the button */
+}
+
+.label {
+  background-color: transparent;
+  border: 2px solid rgb(87, 94, 214);
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  width: 160px; /* Adjusted width */
+  cursor: pointer;
+  transition: all 0.4s ease;
+  padding: 5px;
+  position: relative;
+  margin: 0 10px; /* Space from other elements */
+}
+
+.label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  width: 8px;
+  height: 8px;
+  transition: all 0.4s ease;
+  border-radius: 100%;
+  margin: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.label .input {
+  display: none;
+}
+
+.label .title {
+  font-size: 16px; /* Adjusted font size */
+  color: #fff;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  text-align: center;
+}
+
+.label .title:last-child {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.label .circle {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: rgb(91, 91, 240);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+  position: relative;
+  box-shadow: 0 0 0 0 rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+.label .circle .icon {
+  color: #fff;
+  width: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+.label .circle .square {
+  aspect-ratio: 1;
+  width: 15px;
+  border-radius: 2px;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+.label .circle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #5353cc;
+  width: 100%;
+  height: 0;
+  transition: all 0.4s ease;
+}
+
+.label:has(.input:checked) .title {
+  opacity: 1;
+  visibility: visible;
+  bottom: 60%; /* Adjusted position */
+}
+
+.label:has(.input:checked) .circle {
+  height: 45px;
+  width: 45px;
+  background-color: rgb(0, 194, 94);
+}
+
+.label:has(.input:checked) .circle .icon {
+  transform: translate(-50%, -50%) rotate(90deg); /* Rotate icon */
+}
+
+.label:has(.input:checked) .circle .square {
+  opacity: 1;
+  visibility: visible;
+}
+
+.label:has(.input:checked) .circle::before {
+  height: 100%;
+}
+
+.label:has(.input:checked) .label::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes circleDelete {
+  0% {
+    width: 45px;
+    height: 45px;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes installing {
+  0% {
+    height: 8px;
+  }
+  100% {
+    height: 45px;
+  }
+}
+
+@keyframes installed {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes showInstalledMessage {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.contact-info {
+  text-align: center; /* Center align contact info */
+  margin: 20px 0; /* Margin above and below the contact info */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center content */
+  gap: 15px; /* Space between the icons and text */
+}
+
+.contact-info span {
+  display: flex; /* Align icon and text in a row */
+  align-items: center; /* Center icon and text vertically */
+  color: #fff; /* Color for contact info */
+  font-size: 19px; /* Adjust font size for contact info */
+}
+.resume-button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for background and transform */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Allows padding and margin */
+}
+
+.resume-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+.rainbow-text {
+  display: inline-block; /* Allows the text to be treated as a block for centering */
+  font-size: 56px; /* Adjust the font size as needed */
+  background: linear-gradient(45deg, #ff007f, #ff7f00, #7fff00, #00ff7f, #007fff, #7f00ff, #ff007f); /* Gradient colors */
+  background-size: 400%; /* Size of the gradient for animation */
+  animation: rainbow-animation 5s linear infinite; /* Animation for color change */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the text color transparent */
+  margin: 0; /* Remove margin for better centering */
+  text-align: center; /* Center text within its container */
+  line-height: 1; /* Ensure no extra spacing is added */
+  width: 100%; /* Make the text take the full width of its container */
+}
+.download-button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Some padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.download-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+/* Laptop Animation Styles */
+.laptop {
+  transform: scale(0.8);
+  margin-top: 30px; /* Space between header and animation */
+}
+
+.screen {
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 2px #c8cacb, inset 0 0 0 10px #000;
+  height: 318px;
+  width: 518px;
+  margin: 0 auto;
+  padding: 9px 9px 23px 9px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    15deg,
+    #3f51b1 0%,
+    #5a55ae 13%,
+    #7b5fac 25%,
+    #8f6aae 38%,
+    #a86aa4 50%,
+    #cc6b8e 62%,
+    #f18271 75%,
+    #f3a469 87%,
+    #f7c978 100%
+  );
+  transform-style: preserve-3d;
+  transform: perspective(1900px) rotateX(-88.5deg);
+  transform-origin: 50% 100%;
+  animation: open 4s infinite alternate;
+}
+
+@keyframes open {
+  0% {
+    transform: perspective(1900px) rotateX(-88.5deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg);
+  }
+}
+
+.screen::before {
+  content: "";
+  width: 518px;
+  height: 12px;
+  position: absolute;
+  background: linear-gradient(#979899, transparent);
+  top: -3px;
+  transform: rotateX(90deg);
+  border-radius: 5px 5px;
+}
+
+.text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #fff;
+}
+
+.header {
+  width: 100px;
+  height: 12px;
+  position: absolute;
+  background-color: #000;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  border-radius: 0 0 6px 6px;
+}
+
+.screen::after {
+  background: linear-gradient(to bottom, #272727, #0d0d0d);
+  border-radius: 0 0 20px 20px;
+  bottom: 2px;
+  content: "";
+  height: 24px;
+  left: 2px;
+  position: absolute;
+  width: 514px;
+}
+
+.keyboard {
+  background: radial-gradient(circle at center, #e2e3e4 85%, #a9abac 100%);
+  border: solid #a0a3a7;
+  border-radius: 2px 2px 12px 12px;
+  border-width: 1px 2px 0 2px;
+  box-shadow: inset 0 -2px 8px 0 #6c7074;
+  height: 24px;
+  margin-top: -10px;
+  position: relative;
+  width: 620px;
+  z-index: 9;
+}
+
+.keyboard::after {
+  background: #e2e3e4;
+  border-radius: 0 0 10px 10px;
+  box-shadow: inset 0 0 4px 2px #babdbf;
+  content: "";
+  height: 10px;
+  left: 50%;
+  margin-left: -60px;
+  position: absolute;
+  top: 0;
+  width: 120px;
+}
+
+.keyboard::before {
+  background: 0 0;
+  border-radius: 0 0 3px 3px;
+  bottom: -2px;
+  box-shadow: -270px 0 #272727, 250px 0 #272727;
+  content: "";
+  height: 2px;
+  left: 50%;
+  margin-left: -10px;
+  position: absolute;
+  width: 40px;
+}
+/* Full screen container */
+.full-screen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background-color: #f0f0f0; /* Adjust background as needed */
+  padding: 0;
+  margin: 0;
+}
+
+/* Laptop Animation */
+.laptop-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the laptop covers most of the page */
+  width: 100%;
+}
+
+/* Laptop Styles */
+.laptop {
+  transform: scale(1.05); /* Decreased scale by 5% from the previous version */
+  position: relative;
+  top: -40px; /* Bring the laptop closer to the top */
+}
+
+/* Screen styles */
+.screen {
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 2px #c8cacb, inset 0 0 0 10px #000;
+  height: 440px; /* Decreased screen height by 5% */
+  width: 690px; /* Decreased screen width by 5% */
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Arrange children vertically */
+  background-image: linear-gradient(
+    15deg,
+    #3f51b1 0%,
+    #5a55ae 13%,
+    #7b5fac 25%,
+    #8f6aae 38%,
+    #a86aa4 50%,
+    #cc6b8e 62%,
+    #f18271 75%,
+    #f3a469 87%,
+    #f7c978 100%
+  );
+  animation: open 2s forwards; /* Play animation once */
+}
+
+@keyframes open {
+  0% {
+    transform: perspective(1900px) rotateX(-88.5deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg);
+  }
+}
+
+/* Text styles inside the laptop */
+.screen-header-title {
+  font-size: 3.1rem; /* Slightly reduced font size */
+  margin: 0.5rem 0;
+  text-align: center;
+  
+}
+
+.screen-header-subtitle {
+  font-size: 2.4rem; /* Slightly reduced font size */
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.screen-social-links {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.screen-social-links a {
+  margin: 0 12px;
+  font-size: 1.9rem; /* Slightly reduced icon size */
+}
+
+.screen-contact-info {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 1.5rem; /* Slightly reduced font size */
+}
+
+.screen-container {
+  text-align: center;
+}
+
+.screen-download-button {
+  padding: 12px 24px; /* Slightly adjusted button size */
+  background-color: #3f51b1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.3rem; /* Slightly reduced button font size */
+}
+
+.screen-download-button:hover {
+  background-color: #5a55ae;
+}
+/* Add this to your existing CSS file */
+
+.screen-header-title {
+  /* Existing styles for screen-header-title */
+  color: black; /* Default text color */
+  transition: color 0.3s ease; /* Smooth transition for the color change */
+}
+
+.screen-header-title.hover-effect {
+  color: lightblue; /* Color when hovered */
+}
+/* Header.css */
+
+/* Class for mobile number text */
+.screen-contact-info span {
+  color: white; /* Change text color to white */
+  font-weight: bold; /* Optional: Make it bold */
+  margin-right: 1rem; /* Add space between items */
+}
+
+/* Class for icons */
+.screen-social-links a {
+  color: white; /* Change icon color to white */
+  font-size: 1.5rem; /* Adjust the size if necessary */
+  margin: 0 0.5rem; /* Add margin for spacing */
+  transition: color 0.3s ease; /* Optional: Smooth color transition */
+}
+
+.screen-social-links a:hover {
+  color: #00BCD4; /* Change color on hover (can customize this) */
+}
+/* Header.css */
+
+/* Button styles */
+.screen-download-button {
+  background-color: #44450f; /* Change to your desired color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Add more padding (top-bottom, left-right) */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Optional: Rounded corners */
+  font-size: 14px; /* Make the font size smaller */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.screen-download-button:hover {
+  background-color: #ff509c; /* Darker shade on hover (can customize this) */
+}
+
+/* Keyboard Styles */
+.keyboard {
+  background: radial-gradient(circle at center, #e2e3e4 85%, #a9abac 100%);
+  border: solid #a0a3a7;
+  border-radius: 2px 2px 12px 12px;
+  border-width: 1px 2px 0 2px;
+  box-shadow: inset 0 -2px 8px 0 #6c7074;
+  height: 36px; /* Reduced keyboard height by 5% */
+  margin-top: -10px;
+  position: relative;
+  width: 685px; /* Reduced keyboard width by 5% */
+  z-index: 9;
+}
+
+.keyboard::after {
+  background: #e2e3e4;
+  border-radius: 0 0 10px 10px;
+  box-shadow: inset 0 0 4px 2px #babdbf;
+  content: "";
+  height: 10px;
+  left: 50%;
+  margin-left: -45px;
+  position: absolute;
+  top: 0;
+  width: 90px;
+}
+
+.keyboard::before {
+  background: 0 0;
+  border-radius: 0 0 3px 3px;
+  bottom: -2px;
+  box-shadow: -270px 0 #272727, 250px 0 #272727;
+  content: "";
+  height: 2px;
+  left: 50%;
+  margin-left: -7.5px;
+  position: absolute;
+  width: 30px;
+}
+.header {
+  position: relative; /* Allow positioning adjustments */
+  transition: transform 0.3s ease; /* Smooth transition for movement */
+  z-index: 10; /* Ensure the header stays on top */
+}
+
+/* Optionally, add a class to shift the header up */
+.header.hidden {
+  transform: translateY(-100%); /* Move header out of view */
+}

@@ -1,0 +1,134 @@
+/* General container styles */
+.container {
+    display: flex;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Left container (40% width) */
+  .left-container {
+    width: 40%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  h2 {
+    font-size: 36px; /* Increased font size */
+    font-weight: bold; /* Make the text bold */
+    color: #ffcc00; /* Bright color for the text */
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase; /* Optional: Make the heading uppercase for emphasis */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow effect for depth */
+  }
+  
+  
+  .experience-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .experience-list li {
+    margin-bottom: 15px;
+  }
+  
+  .experience-text {
+    font-size: 18px;
+    line-height: 1.6;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .experience-text:hover {
+    transform: scale(1.05);
+    color: #ffcc00;
+  }
+  
+  /* Right container (60% width) for the cube animation */
+  .right-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .cube-container {
+    position: relative;
+    top: -40px;
+    transform: skewY(-10deg);
+    animation: animate 5s linear infinite;
+  }
+  
+  .cube {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .cube div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transform: translate(calc(-70px * var(--x)), calc(-60px * var(--y)));
+  }
+  
+  .cube div span {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: #dcdcdc;
+    z-index: calc(1 * var(--i));
+    transition: 1.5s;
+  }
+  
+  .cube div span:hover {
+    transition: 0s;
+    background: #ef4149;
+    filter: drop-shadow(0 0 30px #ef4149);
+  }
+  
+  .cube div span:before,
+  .cube div span:after {
+    content: "";
+    position: absolute;
+    transition: 1.5s;
+  }
+  
+  .cube div span:before {
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background: #fff;
+    transform-origin: right;
+    transform: skewY(45deg);
+  }
+  
+  .cube div span:after {
+    top: -40px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    background: #f2f2f2;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+  }
+  
+  /* Animation */
+  @keyframes animate {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  

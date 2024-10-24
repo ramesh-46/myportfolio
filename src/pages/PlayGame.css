@@ -1,0 +1,43 @@
+/* src/pages/PlayGame.css */
+
+.play-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    color: white;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.play-game-container:hover {
+    background: linear-gradient(to right, #8b5cf6, #3b82f6);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.play-game-button {
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.play-game-button:hover {
+    transform: scale(1.1); /* Slightly grow the button on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.play-game-button:active {
+    transform: scale(0.95); /* Shrink button on click */
+}
