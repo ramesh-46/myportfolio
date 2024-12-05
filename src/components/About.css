@@ -1,89 +1,121 @@
 /* About.css */
 .page-container {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
 }
 
 .about-section {
-    display: flex;
-    flex: 1;
-    margin-bottom: 20px; /* Space between sections */
+  display: flex;
+  flex: 1;
+  margin-bottom: 20px; /* Space between sections */
 }
 
 .about-container {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .main-about {
-    flex: 0 0 68%; /* 68% width for About Me section */
-    padding: 20px;
-    background-color: black; /* Background color for About Me */
-    color: white; /* Text color */
-    border-radius: 8px;
-    margin-right: 20px; /* Space between the two containers */
+  flex: 0 0 68%; /* 68% width for About Me section */
+  padding: 20px;
+  background-color: black; /* Background color for About Me */
+  color: white; /* Text color */
+  border-radius: 8px;
+  margin-right: 20px; /* Space between the two containers */
 }
 
 .animation-container {
-    flex: 1; /* Remaining space for animation */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  flex: 1; /* Remaining space for animation */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .details-section {
-    padding: 20px;
-    background-color: #f0f0f0; /* Light background for visibility */
-    margin-top: 20px;
-    border-radius: 8px;
+  padding: 20px;
+  background-color: black; /* Black background for the details section */
+  color: white; /* White text color for contrast */
+  margin-top: 20px;
+  border-radius: 8px;
 }
 
 .details-container {
-    display: flex; /* Use flexbox to arrange the parts */
-    justify-content: space-between; /* Space between skills and animation */
-    margin-top: 20px;
+  display: flex; /* Use flexbox to arrange the parts */
+  justify-content: space-between; /* Space between the skill parts */
+  margin-top: 20px;
 }
 
-.skills-section {
-    flex: 1; /* Allow skills section to take equal space */
+.skills-part {
+  flex: 1; /* Each part takes equal space */
+  padding: 20px;
+  background-color: #333; /* Darker background for skill parts */
+  border-radius: 8px;
+  margin-right: 10px; /* Space between the two parts */
 }
 
-.cube-animation-section {
-    flex: 1; /* Allow cube animation section to take equal space */
-    display: flex;
-    justify-content: center; /* Center the cube */
-    align-items: center;
+.skills-part:last-child {
+  margin-right: 0; /* Remove right margin for the last part */
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  width: 120px;
+  font-size: 16px;
+}
+
+.skill-level {
+  width: 160px;
+  height: 10px;
+  background-color: #555; /* Background color for skill level */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.skill-percent {
+  background-color: #4caf50; /* Green color for progress */
+  height: 100%;
+}
+
+.skill-percent-number {
+  margin-left: 20px;
+  font-size: 16px;
 }
 
 /* Cube Animation Styles */
 .cube-container {
-    width: 200px;
-    height: 200px;
-    perspective: 800px;
-    margin: 50px auto;
-    transition: 0.8s ease-out;
+  width: 200px;
+  height: 200px;
+  perspective: 800px;
+  margin: 50px auto;
+  transition: 0.8s ease-out;
 }
 
 .cube {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    animation: rotate 8s infinite linear;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate 8s infinite linear;
 }
 
 .face {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    line-height: 200px;
-    background: #000000cc; /* Background color for cube faces */
-    border: 2px solid;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  line-height: 200px;
+  background: #000000cc; /* Background color for cube faces */
+  border: 2px solid;
 }
 
 .front { transform: translateZ(100px); }
@@ -94,150 +126,94 @@
 .bottom { transform: rotateX(-90deg) translateZ(100px); }
 
 @keyframes rotate {
-    0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
-    100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
-}
-/* About.css */
-.details-section {
-    padding: 20px;
-    background-color: black; /* Black background for the details section */
-    color: white; /* White text color for contrast */
-    margin-top: 20px;
-    border-radius: 8px;
+  0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+  100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
 }
 
-.details-container {
-    display: flex; /* Use flexbox to arrange the parts */
-    justify-content: space-between; /* Space between the skill parts */
-    margin-top: 20px;
-}
-
-.skills-part {
-    flex: 1; /* Each part takes equal space */
-    padding: 20px;
-    background-color: #333; /* Darker background for skill parts */
-    border-radius: 8px;
-    margin-right: 10px; /* Space between the two parts */
-}
-
-.skills-part:last-child {
-    margin-right: 0; /* Remove right margin for the last part */
-}
-
-.skill {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.skill-name {
-    width: 120px;
-    font-size: 16px;
-}
-
-.skill-level {
-    width: 160px;
-    height: 10px;
-    background-color: #555; /* Background color for skill level */
-    border-radius: 10px;
-    overflow: hidden;
-    margin-left: 20px;
-}
-
-.skill-percent {
-    background-color: #4caf50; /* Green color for progress */
-    height: 100%;
-}
-
-.skill-percent-number {
-    margin-left: 20px;
-    font-size: 16px;
-}
-/* From Uiverse.io by RodolpheANDRIEUX */
+/* Cube Animation with Hover effect */
 .ppppp-anim-cube-container {
-    width: 200px;
-    height: 200px;
-    perspective: 800px;
-    margin: 50px auto;
-    transition: 0.8s ease-out;
-  }
-  
-  .ppppp-anim-cube-container:hover {
-    transform: scale(2);
-  }
-  
-  .ppppp-anim-cube {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    animation: ppppp-anim-rotate 8s infinite linear;
-  }
-  
-  .face {
-    --french: linear-gradient(
-        to right,
-        #0000ff,
-        #ffffff,
-        #ffffff,
-        #ffffff,
-        #ff0000
-      )
-      1;
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    line-height: 200px;
-    background: #000000cc;
-    border: 2px solid;
-    border-image: var(--french);
-  }
-  
-  .front {
-    transform: translateZ(100px);
-  }
-  
-  .back {
-    transform: rotateY(180deg) translateZ(100px);
-  }
-  
-  .right {
-    transform: rotateY(90deg) translateZ(100px);
-  }
-  
-  .left {
-    transform: rotateY(-90deg) translateZ(100px);
-  }
-  
-  .top {
-    transform: rotateX(90deg) translateZ(100px);
-  }
-  
-  .bottom {
-    transform: rotateX(-90deg) translateZ(100px);
-  }
-  
-  @keyframes ppppp-anim-rotate {
-    0% {
+  width: 200px;
+  height: 200px;
+  perspective: 800px;
+  margin: 50px auto;
+  transition: 0.8s ease-out;
+}
+
+.ppppp-anim-cube-container:hover {
+  transform: scale(2);
+}
+
+.ppppp-anim-cube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: ppppp-anim-rotate 8s infinite linear;
+}
+
+.face {
+  --french: linear-gradient(
+      to right,
+      #0000ff,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #ff0000
+  );
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  line-height: 200px;
+  background: #000000cc;
+  border: 2px solid;
+  border-image: var(--french);
+}
+
+.front {
+  transform: translateZ(100px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes ppppp-anim-rotate {
+  0% {
       transform: rotateX(0) rotateY(0) rotateZ(0);
-    }
-  
-    100% {
+  }
+  100% {
       transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-    }
   }
-  .name-container {
-    display: flex; /* Aligns items in a row */
-    align-items: center; /* Vertically centers the items */
-  }
-  
-  .profile-image {
-    width: 150px; /* Adjust width as needed */
-    height: auto; /* Maintains aspect ratio */
-    margin-right: 10px; /* Space between image and name */
-    border-radius: 50%; /* Optional: makes the image circular */
-  }
-  
+}
+
+/* Name and Profile Image Section */
+.name-container {
+  display: flex; /* Aligns items in a row */
+  align-items: center; /* Vertically centers the items */
+}
+
+.profile-image {
+  width: 150px; /* Adjust width as needed */
+  height: auto; /* Maintains aspect ratio */
+  margin-right: 10px; /* Space between image and name */
+  border-radius: 50%; /* Optional: makes the image circular */
+}

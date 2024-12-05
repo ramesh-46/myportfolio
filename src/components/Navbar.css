@@ -16,7 +16,7 @@
 
 .navbar-logo h2 {
   color: #00e8f0; /* Logo color */
-  font-size: 28px; /* Slightly larger font size */
+  font-size: 28px; /* Default font size */
   margin: 0;
   letter-spacing: 1px; /* Add some spacing between letters */
   transition: transform 0.3s; /* Smooth scaling transition */
@@ -31,16 +31,17 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap; /* Wrap items to fit smaller screens */
 }
 
 .navbar-links li {
-  margin-right: 30px; /* Increased spacing between items */
+  margin-right: 30px; /* Spacing between items */
 }
 
 .navbar-links li a {
   color: white; /* White color for links */
   text-decoration: none;
-  font-size: 18px;
+  font-size: 18px; /* Default font size */
   position: relative; /* For the hover effect */
   padding: 5px 0; /* Vertical padding for better click area */
   transition: color 0.3s; /* Smooth color transition */
@@ -63,4 +64,79 @@
 
 .navbar-links li a:hover::after {
   transform: scaleX(1); /* Expand line on hover */
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 1024px) {
+  .navbar-links li a {
+    font-size: 16px; /* Slightly smaller for tablets */
+  }
+  .navbar-logo h2 {
+    font-size: 24px; /* Adjust logo font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-links li a {
+    font-size: 14px; /* Smaller font for mobile devices */
+  }
+  .navbar-logo h2 {
+    font-size: 20px; /* Further adjustment for logo */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-links {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
+  }
+  .navbar-links li {
+    margin-right: 0; /* Remove right margin for stacked layout */
+    margin-bottom: 10px; /* Add space between stacked items */
+  }
+  .navbar-links li a {
+    font-size: 14px; /* Consistent size for smaller devices */
+  }
+  .navbar-logo h2 {
+    font-size: 18px; /* Final adjustment for logo size */
+  }
+}/* Dropdown Toggle for Mobile */
+.dropdown-toggle {
+  display: none; /* Hidden by default */
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .dropdown-toggle {
+    display: block; /* Show the toggle in mobile view */
+  }
+
+  .navbar-links {
+    display: none; /* Hide links initially in mobile view */
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
+    background-color: black; /* Dropdown background */
+    position: absolute;
+    top: 60px; /* Below the navbar */
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 10px 0; /* Add some padding for dropdown items */
+    border-top: 1px solid #333; /* Optional: border at the top */
+  }
+
+  .navbar-links.show {
+    display: flex; /* Show links when dropdown is open */
+  }
+
+  .navbar-links li {
+    margin: 10px 0; /* Add spacing between items in dropdown */
+  }
+
+  .navbar-links li a {
+    font-size: 16px; /* Adjust font size for dropdown items */
+    color: white;
+  }
 }

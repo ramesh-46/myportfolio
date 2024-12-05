@@ -29,21 +29,3 @@ button {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header-container .left,
-  .header-container .right {
-    width: 100%;
-  }
-
-  .header-container img {
-    margin-top: 20px;
-  }
-}
-html {
-  scroll-behavior: smooth; /* Enable smooth scrolling for all anchor links */
-}

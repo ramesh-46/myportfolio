@@ -35,14 +35,14 @@ const cardData = [
     primaryColor: 'rgb(0, 255, 255)', 
     secondaryColor: 'rgb(255, 0, 0)',
     description: 'An e-learning platform that adapts to individual learning styles for optimal educational outcomes.',
-    link: 'https://example.com/telegram-bot-backend', // Link to the project
+    link: 'https://github.com/ramesh-46/telegrambot2.git', // Link to the project
   },
   { 
-    title: 'Face Analyser', 
+    title: 'Personal Expense Tracker', 
     primaryColor: 'rgb(255, 192, 203)', 
     secondaryColor: 'rgb(75, 0, 130)',
     description: 'A virtual reality experience that revolutionizes remote collaboration and team building.',
-    link: 'https://example.com/face-analyser', // Link to the project
+    link: 'https://github.com/ramesh-46/Personal-Expense-Tracker.git', // Link to the project
   },
 ];
 

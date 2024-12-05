@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Contact.css'; // Import the CSS file
 
 const ContactForm = () => {
@@ -7,6 +7,21 @@ const ContactForm = () => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const [showMessages, setShowMessages] = useState(false);
+
+    // Load messages from localStorage when the component mounts
+    useEffect(() => {
+        const savedMessages = JSON.parse(localStorage.getItem('messages'));
+        if (savedMessages) {
+            setMessages(savedMessages);
+        }
+    }, []);
+
+    // Store messages in localStorage whenever messages change
+    useEffect(() => {
+        if (messages.length > 0) {
+            localStorage.setItem('messages', JSON.stringify(messages));
+        }
+    }, [messages]);
 
     const handleSubmit = (e) => {
         e.preventDefault();

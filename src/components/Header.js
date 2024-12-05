@@ -1,12 +1,10 @@
-// src/components/Header.js
 import React, { useState } from 'react';
-import './Header.css'; // Import your CSS file
-import { FaLinkedin, FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa'; // Import icons
+import { FaLinkedin, FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
+import './Header.css';
 
 const Header = () => {
-  const [isHovered, setIsHovered] = useState(false); // State to handle hover
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Functions to handle hover
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -18,14 +16,14 @@ const Header = () => {
   return (
     <div className="full-screen-container">
       <div
-        className={`laptop-animation ${isHovered ? 'active' : ''}`} // Trigger animation on hover
+        className={`laptop-animation ${isHovered ? 'active' : ''}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <div className="laptop">
           <div className="screen">
             <h1
-              className={`screen-header-title ${isHovered ? 'hover-effect' : ''}`} // Use hover-effect here
+              className={`screen-header-title ${isHovered ? 'hover-effect' : ''}`}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -47,18 +45,22 @@ const Header = () => {
               </a>
             </div>
             <div className="screen-contact-info">
-              <span>📞 +91 9550354436</span>
-              <span>✉️ suraramesh46@gmail.com</span>
+              <span>
+                📞 <a href="tel:+919553544436" className="contact-link">+91 9550354436</a>
+              </span>
+              <span>
+                ✉️ <a href="mailto:suraramesh46@gmail.com" className="contact-link">suraramesh46@gmail.com</a>
+              </span>
             </div>
             <div className="screen-container">
-  <a
-    href="/resume.txt"
-    download
-    className={`screen-download-button ${isHovered ? 'button-active' : ''}`}
-  >
-    Download Resume
-  </a>
-</div>
+              <a
+                href="/rkluckyresume.pdf"
+                download="Ramesh_Resume.pdf"
+                className={`screen-download-button ${isHovered ? 'button-active' : ''}`}
+              >
+                Download Resume
+              </a>
+            </div>
           </div>
           <div className="keyboard"></div>
         </div>
