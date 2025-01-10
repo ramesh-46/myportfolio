@@ -13,7 +13,7 @@ const About = () => {
                 alt="Rameshh Kumaar Sura" 
                 className="profile-image" 
               />
-              <h2 className="name">RAMESHH KUMAAR SURA</h2>
+              <h2 className="name">RAMESH SURA</h2>
             </div>
             <p className="description">
               I am a motivated web developer seeking job opportunities to utilize my skills in creating responsive web applications. Proficient in HTML, CSS, JavaScript, and frameworks like React and Bootstrap, I also understand back-end technologies such as Node.js. I am passionate about continuous learning and delivering high-quality, user-centric designs.
@@ -28,7 +28,7 @@ const About = () => {
                 <div className="face back">you'll never see...</div>
                 <div className="face right">World</div>
                 <div className="face left">...this anyway :)</div>
-                <div className="face top">Rameshh Kumaar</div>
+                <div className="face top">Ramesh Sura</div>
                 <div className="face bottom">I'm</div>
               </div>
             </div>

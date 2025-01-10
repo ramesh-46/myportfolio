@@ -12,7 +12,7 @@ const Navbar = ({ onNavItemClick }) => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <h2>RK Portfolio</h2>
+        <h2>Ramesh Sura</h2>
       </div>
 
       {/* Hamburger Menu for Mobile */}
