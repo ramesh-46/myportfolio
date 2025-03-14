@@ -64,12 +64,13 @@ const Header = () => {
     <span>suraramesh46@gmail.com</span>
   </a>
 </div>
+<a href={`${process.env.PUBLIC_URL}/Ramesh2025-mar-updated-final-resume.pdf`} 
+   download="Ramesh2025-mar-updated-final-resume.pdf"
+   className="download-btn animate-pulse">
+   <span>Download Resume</span>
+   <FaDownload className="download-icon" />
+</a>
 
-                
-                <a href="/Ramesh2025-mar-updated-final-resume.pdf" download="Ramesh_Resume.pdf" className="download-btn animate-pulse">
-                  <span>Download Resume</span>
-                  <FaDownload className="download-icon" />
-                </a>
                 
                 <div className="skills-showcase">
                   <div className="skill-bubble html">HTML5</div>
