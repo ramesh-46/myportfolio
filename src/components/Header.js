@@ -51,7 +51,7 @@ const Header = () => {
                   <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon github">
                     <FaGithub />
                   </a>
-                  <a href="https://www.instagram.com/ramesh_sura46" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
+                  <a href="https://www.instagram.com/rameshzylo?igsh=bGF2a2phcTk3d3Yz" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
                     <FaInstagram />
                   </a>
                 </div><div className="contact-details">
